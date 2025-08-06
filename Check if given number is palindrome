@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class ThreeDigitPalindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        
+     
+        if ((num >= 100 && num <= 999) || (num <= -100 && num >= -999)) {
+            int absNum = Math.abs(num);
+        
+            int hundreds = absNum / 100;
+            int tens = (absNum / 10) % 10;
+            int ones = absNum % 10;
+            
+       
+            if (hundreds == ones) {
+                System.out.println("palindrome");
+            } else {
+                System.out.println("not palindrome");
+            }
+        } else {
+            System.out.println("Invalid Input");
+        }
+        
+        sc.close();
+    }
+}
+
