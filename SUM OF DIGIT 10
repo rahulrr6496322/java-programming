@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+public class DigitSumCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+        if (number < 100) {
+            System.out.println("Invalid Input");
+        } else {
+            int sum = 0;
+            int originalNumber = number;
+            while (number > 0) {
+                sum += number % 10;
+                number /= 10;
+            }
+            System.out.println("Sum of digit is " + sum);
+        }
+        scanner.close();
+    }
+}
