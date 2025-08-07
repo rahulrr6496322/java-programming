@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+public class SwapFirstTwoDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine().trim();
+        if (input.length() < 2) {
+            return;
+        }
+        char first = input.charAt(0);
+        char second = input.charAt(1);
+        String swapped = "" + second + first;
+        int result = Integer.parseInt(swapped);
+
+        System.out.println(result);
+    }
+}
