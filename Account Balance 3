@@ -3,30 +3,27 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-import java.util.Scanner;
-public class BankTransaction {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int balance = scanner.nextInt();  
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:          
-               int depositAmount = scanner.nextInt();
-                balance += depositAmount;
-                System.out.println(balance);
+public class Solution {
+        public static void main(String[] args) {
+        Scanner ch=new Scanner(System.in);
+        int x=ch.nextInt();
+        int y=ch.nextInt();
+        switch(y){
+            case 1:
+                int saving=ch.nextInt();
+                System.out.println(x+saving);
                 break;
-            case 2:           
-                int withdrawAmount = scanner.nextInt();
-                if (withdrawAmount > balance) {
+            case 2:
+                int withdraw=ch.nextInt();
+                if(x<withdraw){
                     System.out.println("Insufficient Balance");
-                } else {
-                    balance -= withdrawAmount;
-                    System.out.println(balance);
+                }
+                else{
+                    System.out.println(x-withdraw);
                 }
                 break;
-            default: 
+            default:
                 System.out.println("Invalid Input");
-        }
-        scanner.close();
+        }    
     }
 }
