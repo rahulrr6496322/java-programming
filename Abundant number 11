@@ -3,22 +3,23 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-import java.util.Scanner;
-public class AbundantNumberChecker {
+public class Solution {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        int sumOfDivisors = 0;
-        for (int i = 1; i <= number / 2; i++) {
-            if (number % i == 0) {
-                sumOfDivisors += i;
+      Scanner ch = new Scanner(System.in);
+        int n = ch.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= n / 2; i++)
+        {
+            if (n % i == 0){
+                sum += i;
             }
         }
-        if (sumOfDivisors > number) {
+        if (sum > n){
             System.out.println("Abundant Number");
-        } else {
+        }
+        else
+        {
             System.out.println("Not Abundant Number");
         }
-        scanner.close();
     }
 }
