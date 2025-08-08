@@ -3,19 +3,20 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-import java.util.Scanner;
-public class SwapFirstTwoDigits {
+public class Solution {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine().trim();
-        if (input.length() < 2) {
-            return;
+     Scanner ch = new Scanner(System.in);
+        int n = ch.nextInt();
+        if(n>=10)
+        {
+            char a = String.valueOf(n).charAt(0);
+            char b = String.valueOf(n).charAt(1);
+            System.out.print(b);
+            System.out.print(a);
         }
-        char first = input.charAt(0);
-        char second = input.charAt(1);
-        String swapped = "" + second + first;
-        int result = Integer.parseInt(swapped);
-
-        System.out.println(result);
+        else
+        {
+            System.out.println("STDOUT");
+        } 
     }
 }
