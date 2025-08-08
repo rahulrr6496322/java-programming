@@ -2,32 +2,28 @@ import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
-import java.util.regex.*;
-import java.util.Scanner;
-public class FibonacciRangeSum {
+import java.util.regex.*;import java.util.Scanner;
+public class Solution {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); 
+        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
         if (n < 1 || n > 20 || m < 1 || m > 20) {
             System.out.println("Invalid Input");
             return;
-        }     
-        if (n > m) {
-            int temp = n;
-            n = m;
-            m = temp;
         }
-        int[] fib = new int[21]; 
-        fib[1] = 0;
-        if (m > 1) fib[2] = 1;
-        for (int i = 3; i <= m; i++) {
-            fib[i] = fib[i - 1] + fib[i - 2];
+        int sum = 0;
+        int a = 0, b = 1;
+        for (int i = 1; i <= m; i++) {
+            int fib = (i == 1) ? 0 : (i == 2) ? 1 : a + b;
+            if (i > 2) {
+                a = b;
+                b = fib;
+            }
+            if (i >= n) {
+                sum += fib;
+            }
         }
-        double sum = 0;
-        for (int i = n; i <= m; i++) {
-            sum += fib[i];
-        }
-        System.out.println("The Sum of Fibonacci value is " + sum);
+        System.out.println("The Sum of Fibonacci value is " + (float)sum);
     }
 }
