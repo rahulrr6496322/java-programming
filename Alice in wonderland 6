@@ -1,15 +1,16 @@
-import java.io.*;
+port java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Main {
+public class Solution {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int sum=(n/10)+(n%10);
-        System.out.println("Bird said:"+n);
-        System.out.println("Alice must go in path-"+sum);
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = (num / 10) + (num % 10);
+        System.out.println("Bird said:" + num);
+        System.out.println("Alice must go in path-" + sum);
+        sc.close();
     }
 }
