@@ -1,25 +1,26 @@
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
-public class Main {
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        if (n < 0) {
+      Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        if (n < 0){
             System.out.println("Invalid Input");
-            return;
         }
         int[] ages = new int[n];
-        boolean invalid = false;
         for (int i = 0; i < n; i++) {
-            ages[i] = scanner.nextInt();
+            ages[i] = obj.nextInt();
             if (ages[i] < 0) {
-                invalid = true;
+                System.out.println("Invalid Input");
             }
-        }
-        if (invalid) {
-            System.out.println("Invalid Input");
-            return;
         }
         int youngest = ages[0];
         int oldest = ages[0];
