@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++){
+            arr[i] = sc.nextInt();
+        }
+        int largeEven = arr[0];
+        int secondLargeEven = arr[0];
+        int smallOdd = arr[1];
+        int secondSmallOdd = arr[1];
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) { 
+                if (arr[i] > largeEven) {
+                    secondLargeEven = largeEven;
+                    largeEven = arr[i];
+                } else if (arr[i] > secondLargeEven && arr[i] != largeEven) {
+                    secondLargeEven = arr[i];
+                }
+            } else { 
+                if (arr[i] < smallOdd) {
+                    secondSmallOdd = smallOdd;
+                    smallOdd = arr[i];
+                } else if (arr[i] < secondSmallOdd && arr[i] != smallOdd) {
+                    secondSmallOdd = arr[i];
+                }
+            }
+        }
+        int sum = secondLargeEven + secondSmallOdd;
+        System.out.println("Sum=" + sum);
+    }
+}
