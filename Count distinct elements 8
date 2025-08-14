@@ -3,34 +3,32 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-import java.util.Scanner;
-public class SimpleDistinctCount {
+
+public class Solution {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt(); 
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
+            arr[i] = obj.nextInt();
         }
-        int count = 0;
-
+        int distCount = 0;
         for (int i = 0; i < n; i++) {
-            boolean isDistinct = true;
-            for (int j = 0; j < i; j++) {
+            int j;
+            for (j = 0; j < i; j++) {
                 if (arr[i] == arr[j]) {
-                    isDistinct = false;
                     break;
                 }
             }
-            if (isDistinct) {
-                count++;
+            if (j == i) { 
+                distCount++;
             }
         }
-        if (count == 1) {
-            System.out.println("There are 1 distinct element in the array.");
+        if (distCount == 1) {
+            System.out.println("There are " + distCount + " distinct element in the array.");
         } else {
-            System.out.println("There are " + count + " distinct elements in the array.");
+            System.out.println("There are " + distCount + " distinct elements in the array.");
         }
-        scanner.close();
     }
-}
+} 
