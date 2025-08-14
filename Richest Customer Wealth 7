@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int r = scanner.nextInt(); 
+        int c = scanner.nextInt(); 
+        int[][] acc = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                acc[i][j] = scanner.nextInt();
+            }
+        }
+        int maxWealth = 0;
+        for (int i = 0; i < r; i++) {
+            int curWealth = 0;
+            for (int j = 0; j < c; j++) {
+                curWealth += acc[i][j];
+            }
+            maxWealth = Math.max(maxWealth, curWealth);
+        }
+        System.out.println("Richest Customer Wealth is " + maxWealth);
+    }
+}
